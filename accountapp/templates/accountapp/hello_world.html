@@ -2,29 +2,22 @@
 
 {% block content %}
 
-<style>
+    <script>
+    function change() {
+        var color = 'rgba(' + Math.random() * 255 + ',' + Math.random() * 255 + ',' + Math.random() * 255 + ')';
+        back.style.backgroundColor = color;
+    }
+    </script>
 
-.testing{
-    background-color: powderblue;
-    margin : 1rem;
-    height : 48px;    {# 1rem = 16px #}
-    width : 48px;
-    border-radius: 1rem;
-    display : inline-block;;
-}
+    <div id = "back" onClick = "change()" style="margin: 2rem; text-align:center;" >
+        <h1>METHOD</h1>
 
-</style>
+            <form action="/accounts/hello_world/" method="post">
+                {% csrf_token %}
+                <input type="submit" class="btn btn-primary rounded-pill px-3">
+            </form>
 
-<div style="height : 20rem; background-color: cornflowerblue; margin: 2rem; border-radius: 1rem; overflow:scroll;">
-<h1>TEST</h1>
-
-<div class = "testing" style = "height: 48px; width:48px; ">px</div></br>
-<div class = "testing" style = "height: 3rem; width:3rem; ">rem</div></br>
-<div class = "testing" style = "height: 3em; width:3em; ">em</div></br>
-<div class = "testing" style = "height: 3em; width:3em; ">em</div></br>
-<div class = "testing" style = "height: 3em; width:3em; ">em</div></br>
-<div class = "testing" style = "height: 30%; width:30%; ">%</div>
-
-</div>
+        <h3>{{ text }}</h3>
+    </div>
 
 {% endblock %}

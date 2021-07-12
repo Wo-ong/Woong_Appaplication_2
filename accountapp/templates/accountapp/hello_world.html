@@ -5,15 +5,18 @@
     <script>
     function change() {
         var color = 'rgba(' + Math.random() * 255 + ',' + Math.random() * 255 + ',' + Math.random() * 255 + ')';
-        back.style.backgroundColor = color;
+        header_color.style.color = color;
+        footer_color.style.color = color;
     }
+
     </script>
 
-    <div id = "back" onClick = "change()" style="margin: 2rem; text-align:center;" >
+    <div style="margin: 2rem; text-align:center;" >
         <h1>METHOD</h1>
 
             <form action="/accounts/hello_world/" method="post">
                 {% csrf_token %}
+                <input type="text" name="input_text">
                 <input type="submit" class="btn btn-primary rounded-pill px-3">
             </form>
 

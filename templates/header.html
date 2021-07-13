@@ -1,4 +1,14 @@
 <div style="text-align:center;">
+
+    <script>
+        function change() {
+            var color = 'rgba(' + Math.random() * 255 + ',' + Math.random() * 255 + ',' + Math.random() * 255 + ')';
+            header_color.style.color = color;
+            footer_color.style.color = color;
+        }
+
+    </script>
+
     <div class = "pragmatic_header_logo">
         <h1 id ='header_color' onClick = "change()" style="font-size:45px;">Pragmatic</h1>
     </div>

@@ -1,8 +1,9 @@
+from django.contrib import admin
 from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import path, include
 
 from accountapp.views import hello_world, AccountCreateView, AccountDetailView, AccountUpdateView, AccountDeleteView
-from profileapp import admin
+
 
 app_name = 'accountapp'
 
@@ -17,10 +18,4 @@ urlpatterns = [
     path('detail/<int:pk>', AccountDetailView.as_view(), name='detail'),
     path('update/<int:pk>', AccountUpdateView.as_view(), name='update'),
     path('delete/<int:pk>', AccountDeleteView.as_view(), name='delete'),
-]
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('accounts/', include('accountapp.urls')),
-    path('profiles/', include('profileapp.urls')),
 ]

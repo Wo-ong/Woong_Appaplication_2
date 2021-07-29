@@ -33,9 +33,9 @@
 }
 
 .round_button{
-    color: black;
+    color: dimgray;
     text-decoration: none;
-    box-shadow: 3px 3px 3px black;
+    box-shadow: 2px 2px 3px black;
     border-radius: 20rem;
     padding: .2rem;
 }

@@ -25,6 +25,7 @@
     height: 12rem;
     width: 12rem;
     border-radius: 20rem;
+    box-shadow: 3px 3px 1rem black;
     object-fit: cover;
 }
 
@@ -47,7 +48,7 @@
 .article_image{
     width:60%;
     border-radius:2rem;
-    box-shadow: 0 0 1rem grey;
+    box-shadow: 0 0 2rem grey;
 }
 
 .article_content{

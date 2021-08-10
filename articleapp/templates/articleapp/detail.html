@@ -45,16 +45,21 @@
 
                 <div class="comment_box">
                     <div>
+                        <span>
+                            <img src="{{ comment.writer.profile.image.url }}" style="height:2.5rem; width:2.5rem; border-radius:10rem; object-fit: cover;">
+                        </span>
                         <span style="font-size:1.4rem;"
                               class="NNS_B">
                             {{ comment.writer.profile.nickname }}
                         </span>
-                        <span>{{ comment.created_at }}</span>
                     </div>
                     <div>
-                        <p>
+                        <p style="font-size:1.2rem">
                             {{ comment.content }}
                         </p>
+                    </div>
+                    <div style="text-align: right;">
+                        <span>{{ comment.created_at }}</span>
                     </div>
                 </div>
 

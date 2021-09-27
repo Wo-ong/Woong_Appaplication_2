@@ -13,14 +13,27 @@ services:
       - gis_6ban_static:/data/static/
       - gis_6ban_media:/data/media/
 
-  django:
-    image: woong_django:3
+  django_container_gunicorn:
+    image: woong_django:4
     networks:
       - gis_6ban_network
     volumes:
       - gis_6ban_static:/home/Woong_Appaplication_2/staticfiles/
       - gis_6ban_media:/home/Woong_Appaplication_2/media/
+    secrets:
+      - DJANGO_SECRET_KEY
 
+  mariadb:
+    image: mariadb:10.5
+    networks:
+      - gis_6ban_network
+    volumes:
+      - gis_mariadb:/var/lib/mysql
+    environment:
+      MARIADB_ROOT_PASSWORD: password1234
+      MARIADB_DATABASE: django
+      MARIADB_USER: django
+      MARIADB_PASSWORD: password1234
 
 
 networks:
@@ -29,3 +42,8 @@ networks:
 volumes:
   gis_6ban_static:
   gis_6ban_media:
+  gis_mariadb:
+
+secrets:
+  DJANGO_SECRET_KEY:
+    external: true
